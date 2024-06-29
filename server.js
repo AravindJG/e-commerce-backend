@@ -21,7 +21,7 @@ mongoose.connect(MONGO_URL)
         .then(()=>{
             console.log("Connected to mongodb");
             app.listen(PORT, ()=>{
-                console.log(`E-commerce website is listening at port ${PORT}`)
+                console.log(`E-commerce backend is listening at port ${PORT}`)
             })
         }).catch((error)=>{
             console.log(error);
