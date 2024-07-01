@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const productRoute = require("./routes/productRoute");
+const popularRoute = require("./routes/popularRoute");
+const collectionsRoute = require("./routes/collectionsRoute");
 
 dotenv.config();
 const MONGO_URL = process.env.MONGO_URL;
@@ -15,6 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/',productRoute);
+app.use('/popular',popularRoute);
+app.use('/collections',collectionsRoute);
 
 mongoose.set("strictQuery",false);
 mongoose.connect(MONGO_URL)
