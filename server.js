@@ -9,10 +9,17 @@ const collectionsRoute = require("./routes/collectionsRoute");
 dotenv.config();
 const MONGO_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT;
+const FRONT_END = process.env.FRONT_END
 
 
 const app = express();
-app.use(cors());
+
+const corsOptions = { 
+    origin: FRONT_END, 
+    optionsSuccessStatus: 200 
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
