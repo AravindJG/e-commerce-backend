@@ -28,5 +28,5 @@ mongoose.connect(MONGO_URL)
                 console.log(`E-commerce backend is listening at port ${PORT}`)
             })
         }).catch((error)=>{
-            console.log(error);
+            throw new Error(error.message);
         })
