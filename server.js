@@ -9,13 +9,13 @@ const collectionsRoute = require("./routes/collectionsRoute");
 dotenv.config();
 const MONGO_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT;
-const FRONT_END = process.env.FRONT_END
+const FRONTEND = process.env.FRONTEND
 
 
 const app = express();
 
 const corsOptions = { 
-    origin: FRONT_END, 
+    origin: FRONTEND, 
     optionsSuccessStatus: 200 
 }
 
